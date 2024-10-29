@@ -4,22 +4,23 @@ import vendasPorStatus from "./vendasPorStatus.js";
 import diaComMaisVenda from "./maisVendaDia.js";
 import tabelaDeCompra from "./tabelaCompradores.js";
 // 1 - Acesse os dados da api: https://api.origamid.dev/json/transacoes.json
-const dados = await estatisticas();
+async function iniciar() {
+ const dados = await estatisticas();
 
-// 2 - Mostre em uma tabela os dados de cada transação.
-const tabela = tabelaDeCompra(dados);
+ // 2 - Mostre em uma tabela os dados de cada transação.
+ const tabela = tabelaDeCompra(dados);
 
-// 3 - Calcule:
-// 3.1 - Soma total dos valores
-const { total, cartao, boleto } = totalVendas(dados);
-// 3.3 - Transações por status.
-const { pagas, recusadas, aguardando, estornadas } = vendasPorStatus(dados);
-// 3.4 - Total de vendas por dia da semana.
-// 3.5 - Dia da semana com mais vendas.
-const diaComMaisVendas = diaComMaisVenda(dados);
+ // 3 - Calcule:
+ // 3.1 - Soma total dos valores
+ const { total, cartao, boleto } = totalVendas(dados);
+ // 3.3 - Transações por status.
+ const { pagas, recusadas, aguardando, estornadas } = vendasPorStatus(dados);
+ // 3.4 - Total de vendas por dia da semana.
+ // 3.5 - Dia da semana com mais vendas.
+ const diaComMaisVendas = diaComMaisVenda(dados);
 
-// 4 - Mostre as estatísticas na tela.
-document.body.innerHTML += `
+ // 4 - Mostre as estatísticas na tela.
+ document.body.innerHTML += `
  <div>
     <h1>Estatísticas</h1>
     <p>Total : R$ ${total.toLocaleString("pt-BR")}</p>
@@ -51,3 +52,6 @@ document.body.innerHTML += `
     </table>
   </div>
   `;
+}
+
+iniciar();
