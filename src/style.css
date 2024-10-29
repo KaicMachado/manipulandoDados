@@ -1,0 +1,68 @@
+body {
+ margin: 0;
+ padding: 2rem;
+ display: flex;
+ flex-direction: column;
+ place-items: center;
+ font-size: 1.25rem;
+ font-family: sans-serif;
+}
+
+p {
+ font-weight: 500;
+ font-size: 1.2rem;
+}
+
+div {
+ display: block;
+ width: 100%;
+ border-top: 3px solid ghostwhite;
+}
+
+table {
+ display: table;
+ border-collapse: separate;
+ box-sizing: border-box;
+ text-indent: initial;
+ unicode-bidi: isolate;
+ border-spacing: 2px;
+ border-color: gray;
+}
+
+table td,
+table th {
+ padding: 0.5rem 1rem;
+}
+
+thead {
+ display: table-header-group;
+ vertical-align: middle;
+ unicode-bidi: isolate;
+ border-color: inherit;
+}
+
+th {
+ display: table-cell;
+ vertical-align: inherit;
+ font-weight: bold;
+ text-align: -internal-center;
+ unicode-bidi: isolate;
+}
+
+tbody {
+ display: table-row-group;
+ vertical-align: middle;
+ unicode-bidi: isolate;
+ border-color: inherit;
+}
+
+tr {
+ display: table-row;
+ vertical-align: inherit;
+ unicode-bidi: isolate;
+ border-color: inherit;
+}
+
+table tr:nth-child(even) {
+ background-color: ghostwhite;
+}
