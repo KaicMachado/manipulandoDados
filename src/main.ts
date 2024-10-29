@@ -23,7 +23,10 @@ async function iniciar() {
  document.body.innerHTML += `
  <div>
     <h1>Estatísticas</h1>
-    <p>Total : R$ ${total.toLocaleString("pt-BR")}</p>
+    <p>Total : R$ ${total.toLocaleString("pt-BR", {
+     style: "currency",
+     currency: "BRL",
+    })}</p>
     <p>Cartão de Crédito : ${cartao}</p>
     <p>Boleto : ${boleto}</p>
   </div>
