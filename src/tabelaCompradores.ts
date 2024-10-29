@@ -5,7 +5,7 @@ export default function tabelaDeCompra(vendas: Venda[]): string {
           <tr>
             <td>${venda.nome}</td>
             <td>${venda.email}</td>
-            <td>${venda.valor}</td>
+            <td>R$ ${venda.valor}</td>
             <td>${venda.forma_de_pagamento}</td>
             <td>${venda.status}</td>
         </tr>
